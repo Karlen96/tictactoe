@@ -52,9 +52,10 @@ function writeText() { // ставит Х или О завысимости кт�
 	}
 	j++;
 	countDrow++;
-	if (countDrow > sizeTable - 1) {
-		checkVictory();
-	}
+	//if (countDrow > sizeTable - 1) {
+	//	checkVictory();
+	//}
+	checkVictory();
 }
 
 
@@ -115,61 +116,40 @@ function allCombinationDiagonalTwo() {
 		t++;
 	}
 }
-
-let victoriCountRowX = 0;
-let victoriCountRowO = 0;
-
+let c = 0;
+let countX = 0,
+	countO = 0;
 
 function checkVictory() { //проверяет совпадение и находит победителя
 	for (let i = 0; i < sizeTable; i++) {
-		for (let j = 0; j < sizeTable; j++) {
-			if (arroptions[i][j].innerHTML == "X") {
-				victoriCountRowX++;
-				if (victoriCountRowX == sizeTable) {
-					victory.style.display = "flex";
-					victoryp.innerHTML = "VictoryX";
-					play.onclick = () => location.reload();
-				}
-			} else {
-				victoriCountRowX = 0;
-			}
-			if (arroptions[i][j].innerHTML == "O") {
-				victoriCountRowO++;
-				if (victoriCountRowO == sizeTable) {
-					victory.style.display = "flex";
-					victoryp.innerHTML = "VictoryO";
-					play.onclick = () => location.reload();
-				}
-			} else {
-				victoriCountRowO = 0;
-			}
+		if (arroptions[c][i].innerHTML == "X") {
+			countX++;
+		} else if (arroptions[c][i].innerHTML == "O") {
+			countO++;
 		}
 	}
 
-	for (let i = 0; i < sizeTable; i++) {
-		if (arroptions[i][i].innerHTML == "X") {
-			victoriCountRowX++;
-			if (victoriCountRowX == sizeTable) {
-				victory.style.display = "flex";
-				victoryp.innerHTML = "VictoryX";
-				play.onclick = () => location.reload();
-			}
-		} else {
-			victoriCountRowX = 0;
-		}
-		if (arroptions[i][i].innerHTML == "O") {
-			victoriCountRowO++;
-			if (victoriCountRowO == sizeTable) {
-				victory.style.display = "flex";
-				victoryp.innerHTML = "VictoryO";
-				play.onclick = () => location.reload();
-			}
-		} else {
-			victoriCountRowO = 0;
-		}
+	if (countX == sizeTable) {
+		victory.style.display = "flex";
+		victoryp.innerHTML = "Victory X";
+		play.onclick = () => location.reload();
+	} else {
+		countX = 0;
 	}
 
+	if (countO == sizeTable) {
+		victory.style.display = "flex";
+		victoryp.innerHTML = "Victory O";
+		play.onclick = () => location.reload();
+	} else {
+		countO = 0;
+	}
 
+	c++;
+	if (c < arroptions.length) {
+		checkVictory();
+	}
+	c = 0;
 
 	if (countDrow == Math.pow(sizeTable, 2)) { // если ничья
 		victory.style.display = "flex";
