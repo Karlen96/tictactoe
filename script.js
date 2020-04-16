@@ -8,7 +8,7 @@ const play = document.querySelector(".play");
 
 let j, countDrow = 0,
 	sizeTable = prompt("enter any sizes for tables"),
-	sizeTableBombination;
+	sizeTableCombination;
 const calls = [],
 	arroptions = [];
 
@@ -60,8 +60,8 @@ function writeText() { // ставит Х или О завысимости кт�
 
 
 function combinationsVictory() {
-	sizeTableBombination = parseInt(sizeTable) * 2 + 2;
-	for (let i = 0; i < sizeTableBombination; i++) {
+	sizeTableCombination = parseInt(sizeTable) * 2 + 2;
+	for (let i = 0; i < sizeTableCombination; i++) {
 		arroptions.push([]);
 	}
 	allCombinationRow();
