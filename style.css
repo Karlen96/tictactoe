@@ -7,25 +7,25 @@
 }
 
 .wrapper {
-	display         : flex;
-	justify-content : center;
-	align-items     : center;
-	flex-direction  : column;
-	width           : 100%;
-	height          : 100vh;
-	background-color: #ccc;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	flex-direction : column;
+	width          : 100%;
+	height         : 100vh;
+	background     : linear-gradient(135deg, rgba(73, 155, 234, 1) 19%, rgba(72, 154, 234, 1) 21%, rgba(58, 144, 232, 1) 44%, rgba(32, 124, 229, 1) 100%);
 }
 
 .start__form {
-	display         : flex;
-	justify-content : center;
-	align-items     : center;
-	flex-direction  : column;
-	min-width       : 200px;
-	min-height      : 200px;
-	border          : 1px solid;
-	border-radius   : 10px;
-	background-color: #fff;
+	display        : flex;
+	justify-content: center;
+	align-items    : center;
+	flex-direction : column;
+	min-width      : 200px;
+	min-height     : 200px;
+	border         : 1px solid rgba(0, 0, 0, 0.5);
+	border-radius  : 10px;
+	background     : linear-gradient(135deg, rgba(210, 255, 82, 1) 14%, rgba(169, 241, 72, 1) 49%, rgba(145, 232, 66, 1) 70%, rgba(145, 232, 66, 1) 100%);
 }
 
 .buttons {
@@ -38,13 +38,17 @@
 }
 
 .buttons>button {
-	width           : 120px;
-	height          : 35px;
-	border          : 1px solid black;
-	border-radius   : 20px;
+	width        : 120px;
+	height       : 35px;
+	border       : 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	background   : linear-gradient(135deg, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 0%, rgba(246, 41, 12, 1) 88%, rgba(231, 56, 39, 1) 100%);
+	cursor       : pointer;
+	transition   : background-color 1s;
+}
+
+.buttons>button:hover {
 	background-color: #fff;
-	cursor          : pointer;
-	background-color: #ccc;
 }
 
 .game__body {
